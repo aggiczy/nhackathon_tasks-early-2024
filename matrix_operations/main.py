@@ -77,7 +77,7 @@ def compute_expression(expression, matrices, operator):
 def format_matrix(matrix):  # format the matrix for output
     return '\n'.join([' '.join(map(str, row)) for row in matrix])
 
-with open('./input.txt', 'r') as file:  # read input file
+with open('matrix_operations/input.txt', 'r') as file:  # read input file
     lines = file.readlines()
 
 # read matrices and operations from the input
