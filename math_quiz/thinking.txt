@@ -1,0 +1,94 @@
+1. Egy vonat állandó sebességgel halad át egy alagúton. 20 másodpercig tart, amíg a 300 m hosszú alagúton átér, onnantól, hogy az eleje eléri az alagút elejét, addig, amíg a vége el nem hagyja. Egy lámpa az alagútban pont 5 másodpercen át van a vonat felett. Milyen hosszú a vonat (méterben)?
+    Data we know
+    -   length_tunnel = 300m
+    -   passtime_tunnel = 20s
+    -   passtime_signal = 5s
+
+    Return data: length_train = l
+
+    Data we have to know to get "Return data"
+    -   speed_train = v
+
+	v = (length_tunnel + length_train) / passtime_tunnel
+
+    length_train = v * passtime_signal
+
+    combinate the two equations:
+    v = (length_tunnel + length_train) / passtime_tunnel = length_train / passtime_signal
+    
+    solve the equation
+        (length_tunnel + length_train) / passtime_tunnel = length_train / passtime_signal
+        length_tunnel * passtime_signal + length_train * passtime_signal = length_train * passtime_tunnel
+        length_tunnel * passtime_signal = length_train * (passtime_tunnel - passtime_signal)
+        length_train = (length_tunnel * passtime_signal) / (passtime_tunnel - passtime_signal)
+
+    length_train = (300m * 5s) / (2s0 - 5s) = (1500m * s) / 15s = 100m
+
+2. Egy cukrász két 2 cm, egy 6 cm és egy 8 cm oldalélű marcipánkocka összeragasztásával egy nagyobb testet épített úgy, hogy egy-egy illesztésnél az egyik marcipánkocka teljes oldala ráfeküdt a másik kocka egy lapjára. A kész testből kivághatunk magunknak egy téglatestet, de csak olyan sík mentén vághatunk, amely illeszkedik valamelyik kocka lapjára. Mekkora a legnagyobb térfogatú marcipántégla, amit így kaphatunk (köbcentiméterben)?
+    Two different numbers are multiplied to get a certain result. This result can always be increased by increasing the smaller number.
+    The 2 2cm cubes are placed on the 8cm cube, then the 6cm cube is placed on the 8 and 4cm sides, which gives us this result:
+        4cm*8cm*10cm = 320^3
+
+3. Jancsi és Juliska a tőlük 20 km-re levő mézeskalácsházhoz igyekszik. Kettejüknek van egy biciklijük, amin egyszerre csak egyikük tud ülni. Elhatározták, hogy először Jancsi fog gyalogolni, és Juliska biciklizik valameddig, ott leteszi a biciklit, majd gyalog megy tovább. Amikor Jancsi odaér, felszáll a biciklire, és elmegy vele a mézeskalácsházig. Jancsi 5 km/h sebességgel gyalogol és 12 km/h sebességgel biciklizik, Juliska 4 km/h sebességgel gyalogol, és 10 km/h sebességgel biciklizik. Hány km-t kell Juliskának bicikliznie, hogy egyszerre érjenek a mézeskalácsházhoz, ha egyszerre is indulnak el?
+    Data we know
+    - speed_jancsi_walk = 5 km/h
+    - speed_jancsi_bike = 12 km/h
+    - speed_juliska_walk = 4 km/h
+    - speed_juliska_bike = 10 km/h
+    - distance_to_gingerbread_house = 20 km
+
+    Return data: distance_juliska_bike = x
+
+    Data we have to know to get "Return data"
+    -   distance_juliska_bikes = d
+
+    Solution
+    -   Jancsi walks x km and then rides a bike for 20 - x km
+    -   Juliska walks 20 - x km and then rides a bike for x km
+    -   The two equations must be equal to arrive at the gingerbread house at the same time, so
+        (x / 10) + ((20 - x) / 4) = (x / 5) + ((20 - x) / 12)
+    -   Solving the equation x = 12.5
+
+	distance_juliska_bike = 12.5 km
+
+4. Egy koordinátarendszerben megrajzoltuk az origó középpontú, 5 egység sugarú kört. Hány rácspont esik erre a körvonalra? (Rácspontnak nevezzük azokat a pontokat, melyeknek mindkét koordinátája egész szám.)
+    If the circle has a radius of 5, the equation of the circle is x^2 + y^2 = 25
+    From this, y^2 = 25 - x^2, and where y^2 is a square number, there will be a lattice point.
+    Where the x values must be between -5 and 5.
+
+    In this case, the equation of the circle will only be an integer in the case of (+-)3^2+(+-)4^2 = 25, so the solutions are
+    (0,5) (-5,0) (3,4) (-3,4) (-4,3) (-3,-4)
+    (5,0) (0,-5) (4,3) (4,-3) (3,-4) (-4,-3)
+
+    so there will be 12 solutions.
+
+
+5. A koordináta-rendszerben az ABC háromszög csúcspontjai: A(0;4), B(3;0), C(c;6). A háromszög területe 7. Mekkora a c, ha tudjuk, hogy 0<c<3 ?
+    The koord-geo area formula is: T = 1/2*|xˇ1*(y˘2-yˇ3)+xˇ2*(y˘3-yˇ1)+xˇ3*(y˘1-yˇ2)|
+    Substituting: T = 1/2*|0*(0-6)+3*(6-4)+c(4-0)|
+    Combining: |6+4c| = 14
+    Which solved for c:
+    C = 2
+    So the value of c is 2.
+
+6. Néhányan paintball-ütközetet vívnak egymással. Egy adott helyzetben egymástól való távolságaik mind különbözők. Ekkor mindenki rálő a hozzá legközelebb álló emberre. Legfeljebb hányan lőhetnek ugyanarra az emberre?
+    Let's assume that a person is standing in a circle.
+    For the distance between the other people around the person to be greater than the center, more than 60° the angles of the shots must be closed, less than this, the distance between the two vertices will be shorter than the center.
+
+7. Egy dobozban 30 egyforma nagyságú golyó van: pirosak, kékek és zöldek, mindegyikből különböző mennyiségű, zöldből van a legtöbb. Becsukott szemmel legalább 23 golyót kell kivennünk ahhoz, hogy biztosan legyen mindhárom színű golyó a kihúzottak között; illetve legalább 21 golyót, hogy biztosan legyen piros golyónk. Hány piros golyó van?
+    There are 30 balls in the box and after 21 draws we would definitely draw a red one, so the 21st would be red, so 20 would not be red, so there are 30-20 = 10 red balls in the box.
+
+8. 1 cm oldalú kis négyzetekből összeraktunk egy nagyobbat. A nagy négyzet átlóiban álló kis négyzetek területének összege 85 négyzetcentiméter. Mekkora a nagy négyzet területe négyzetcentiméterben megadva?
+    The area of a square is 1cm^2
+    The two diagonals together are 85cm^2 + 1cm^2, because we take the square at the intersection of the two diagonals 2x.
+    Which is a total of 86cm^2, so both diagonals are 43cm^2.
+    From which it follows that the area of the large square is 1849cm^2.
+
+9. Egy angol-magyar találkozó végén minden résztvevő elköszönt mindegyik másik résztvevőtől: az angolok mindenkinek egyesével ezt mondták: ,,Goodbye!'', míg a magyarok ezt: ,,Viszlát!'' Hányan angol vett részt a találkozón, ha 198-szor hangzott el az, hogy ,,Goodbye!'' és 308-szor az, hogy ,,Viszlát!''?
+    n = guests
+    Everyone greets everyone, except themselves, so the total number of guests: n(n-1) = 198-308 => n^2-n = 506 => n^2-n-506 = 0
+    From which nˇ1 = 23 ; nˇ2 = -22 (cannot be negative), so the total number of guests is 23.
+
+    We know that everyone greets n-1 people, so 22.
+    The number of Hungarians is 308 / 22 = 14
+    The number of English is 198 / 22 = 9
