@@ -73,4 +73,4 @@ for i in input_mazes:  # iterate through the input_mazes
 # solve the mazes
 solutions = maze_solver(mazes)
 for i, solution in enumerate(solutions, 1):
-			print(f"{chr(ord('a') + i - 1).upper()}\n{' '.join(solution[0:])}\n")
+			print(f"{chr(ord('a') + i - 1).upper()}\nS {' '.join(solution[0:])}\n")
