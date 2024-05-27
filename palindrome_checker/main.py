@@ -1,5 +1,5 @@
 # palindrome_checker
-with open('palindrome_checker/input.txt', 'r') as f:
+with open('./input.txt', 'r') as f:
   input = f.read()
 
 item_list = input.splitlines()

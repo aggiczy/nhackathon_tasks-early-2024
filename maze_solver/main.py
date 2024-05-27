@@ -44,7 +44,7 @@ def maze_solver(mazes):
 mazes = []  # list of mazes
 input_list = []  # list of lines from the input file
 
-with open("maze_solver/input.txt", "r") as input_file:
+with open("./input.txt", "r") as input_file:
 	for i in input_file:
 		i = i.strip().replace(' ', '')
 		input_list.append(i)  # add every line from the input_file in the list of input_list
